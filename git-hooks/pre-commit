@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Check for Laravel Pint
+which ./vendor/bin/pint &> /dev/null
+if [[ "$?" == 1 ]]; then
+  echo "\t\033[41mPlease install Laravel Pint\033[0m"
+  exit 1
+fi
+
+./vendor/bin/pint --preset laravel -v --test
+
+if [[ "$?" == 1 ]]; then
+  exit 1
+fi
+
+# Check for ESLint
+which ./node_modules/.bin/eslint &> /dev/null
+if [[ "$?" == 1 ]]; then
+  echo "\t\033[41mPlease install ESlint\033[0m"
+  exit 1
+fi
+
+./node_modules/.bin/eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts --ignore-path .gitignore
+
+if [[ "$?" == 1 ]]; then
+  exit 1
+fi
+
+exit $?
