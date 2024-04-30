@@ -16,7 +16,8 @@
     - git-hooks
         - add file: git-hooks/pre-commit
             - content:
-                `#!/bin/sh
+                ```
+                #!/bin/sh
 
                 # Check for Laravel Pint
                 which ./vendor/bin/pint &> /dev/null
@@ -44,10 +45,12 @@
                 exit 1
                 fi
 
-                exit $?`
+                exit $?
+                ```
         - add file: .eslintrc.cjs
             - content:
-                `/* eslint-env node */
+                ```
+                /* eslint-env node */
                 require("@rushstack/eslint-patch/modern-module-resolution");
 
                 module.exports = {
@@ -60,16 +63,19 @@
                     rules: {
                         "vue/multi-word-component-names": 0,
                     },
-                };`
+                };
+                ```
         - run:
             - npm install @rushstack/eslint-patch @vue/eslint-config-prettier @vue/eslint-config-typescript prettier
         - update files:
             - package.json:
                 - under script:
-                    `"dev": "vite",
+                    ```
+                    "dev": "vite",
                     "build": "vite build",
                     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts --fix --ignore-path .gitignore",
-                    "format": "prettier . --write"`
+                    "format": "prettier . --write"
+                    ```
             - postcss.config.js
                 - rename to postcss.config.mjs
         - run:
@@ -80,7 +86,7 @@
             - vendor/bin/pint --preset laravel -v
             - npm run lint
     - temporary disable fortify and jetstream features
-    mixins
-    enums
-    localization
-    base service for crud
+    - mixins (not implemented yet)
+    - enums (not implemented yet)
+    - localization (not implemented yet)
+    - base service for crud (not implemented yet)
