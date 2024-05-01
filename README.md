@@ -87,6 +87,6 @@
             - npm run lint
     - temporary disable fortify and jetstream features
     - mixins (not implemented yet)
-    - enums (not implemented yet)
     - localization (not implemented yet)
+    - enums (not implemented yet)
     - base service for crud (not implemented yet)
