@@ -63,6 +63,11 @@
                     rules: {
                         "vue/multi-word-component-names": 0,
                     },
+                    ignorePatterns: [
+                        "public/js/**/*.js",
+                        "public/build/**/*.js",
+                        "vendor/**/*.js",
+                    ],
                 };
                 ```
         - run:
